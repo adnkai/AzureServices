@@ -4,7 +4,7 @@
 
 public class Program
 {
-    private const string serviceConnectionString = "Endpoint=sb://speedrunanypercent.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=xA3J6qp526AlxokoN1u4YaGuSSXwmzxM0rCTc6PnkWo=";
+    private const string serviceConnectionString = "";
     static string queueName = "messagequeue";
     static ServiceBusClient? client;
     static ServiceBusProcessor? processor;
@@ -26,6 +26,7 @@ public class Program
     {
         client = new ServiceBusClient(serviceConnectionString);
         
+        // Processor Options
         processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions(){
                 ReceiveMode = ServiceBusReceiveMode.ReceiveAndDelete,
                 PrefetchCount = 25,
