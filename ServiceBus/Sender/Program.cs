@@ -5,8 +5,8 @@ public class Program
     private const string storageConnectionString = "";
     private const string queueName = "messagequeue";
     private const int numOfMessages = 300;
-    static ServiceBusClient client;
-    static ServiceBusSender sender;
+    static ServiceBusClient? client;
+    static ServiceBusSender? sender;
     public static async Task Main(string[] args)
     {
         client = new ServiceBusClient(storageConnectionString);
